@@ -45,16 +45,16 @@ User signup
 
    write user details with following field \n
 
-   endpoint: localhost:8080/auth/signup/ (hit from postman)
+   endpoint: localhost:8080/auth/signup/ (hit from postman) \n
 
-   write inside body raw with below details with same field
+   write inside body raw with below details with same field \n
    {
     "username":"write user name here",
     "password":".......",
     "role":"...",
     department:"..."(write only incase of manager or employee define their department for admin it will be null by default) 
-   }
-
+   } \n
+   \n
    output format
    eg.
    {
@@ -62,30 +62,34 @@ User signup
     "password": "$2b$10$8cgGxrIeNaaKYp9xm9nwDuAU5BzNou4/JaLJpoj1VUZfAB9t5pw5S",
     "role": "Admin"
   }
+  \n
 
-User Login
-   Give username and password for login, if creadentials true. then return a jwt token
-   token contains user details too.
+User Login \n
+   Give username and password for login, if creadentials true. then return a jwt token \n
+   token contains user details too. \n
+   \n
 
-   endpoint: localhost:8080/auth/login (hit from poastman)
+   endpoint: localhost:8080/auth/login (hit from poastman) \n
    
-   write inside body raw with below details with same field
+   write inside body raw with below details with same field \n
    {
     "username":"...." (eg. Admin)
     "password":"...." (eg. Admin@1234)
    }   
-
-   output format (get token in response body)
+   \n
+   \n
+   output format (get token in response body) \n
    eg. {
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
        }
-
-Get request  
-   endpoint: localhost:8080/tasks/ (get request)
+  \n
+Get request  \n
+   endpoint: localhost:8080/tasks/ (get request) \n
+   \n
    
-   hit from postman (write token with 'token' as key and values as token which got from response at login time)
-
-   if admin request for get api, show all tasks 
+   hit from postman (write token with 'token' as key and values as token which got from response at login time) \n
+   \n
+   if admin request for get api, show all tasks \n
    output format
    [
     {
@@ -105,10 +109,10 @@ Get request
         "__v": 0
     }
   ]
-
-  if manager request the get api, only return array of their department tasks.
-  if employee request the get api ,only return array of their assigned tasks.
-
-Delete User
-   enpoint : localhost:8080/users/  (http patch)
-   only admin can delete the user.
+  \n
+  if manager request the get api, only return array of their department tasks. \n
+  if employee request the get api ,only return array of their assigned tasks. \n
+  \n
+Delete User \n
+   enpoint : localhost:8080/users/  (http patch) \n
+   only admin can delete the user. \n
