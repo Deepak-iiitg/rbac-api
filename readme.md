@@ -33,17 +33,17 @@
     PASSWORD_SALT_ROUND=define saltRound(eg. 10)
 
 ## Usage
-To start the server, run:
+To start the server, run command : 
    node index.js
 
-   or start with nodemon run below command
+   or start with nodemon run command: 
    npm run dev
 
 ## Flow of Project
 User signup
    Note: whaterver port written in endpoient will change based on they defined. 
 
-   write user details with following field
+   write user details with following field \n
 
    endpoint: localhost:8080/auth/signup/ (hit from postman)
 
