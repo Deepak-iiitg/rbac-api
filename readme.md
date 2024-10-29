@@ -27,44 +27,42 @@
 
 4. Set up your environment variables (create a `.env` file) and define following field with same as write here:
 
-    SECRET_KEY=secret_key(write secret_key here)
-    DB_URL=database_url(eg. mongodb://127.0.0.1:27017/rbac-api)
-    PORT=port_number(eg. 8080)
-    PASSWORD_SALT_ROUND=define saltRound(eg. 10)
+- SECRET_KEY=secret_key(write secret_key here)
+- DB_URL=database_url(eg. mongodb://127.0.0.1:27017/rbac-api)
+- PORT=port_number(eg. 8080)
+- PASSWORD_SALT_ROUND=define saltRound(eg. 10)
 
 ## Usage
-To start the server, run command : 
-   node index.js
+-To start the server, run command : node index.js
 
-   or start with nodemon run command: 
-   npm run dev
+   or start with nodemon run command: npm run dev
 
 ## Flow of Project
-User signup
-   Note: whaterver port written in endpoient will change based on they defined. 
+-User signup
+-   Note: whaterver port written in endpoient will change based on they defined. 
 
-   write user details with following field \n
+-   write user details with following field
 
-   endpoint: localhost:8080/auth/signup/ (hit from postman) \n
+-  endpoint: localhost:8080/auth/signup/ (hit from postman)
 
-   write inside body raw with below details with same field \n
+-   write inside body raw with below details with same field
    {
     "username":"write user name here",
     "password":".......",
     "role":"...",
     department:"..."(write only incase of manager or employee define their department for admin it will be null by default) 
-   } \n
-   \n
-   output format
+   } 
+   
+-   output format:
    eg.
    {
     "username": "admin123",
     "password": "$2b$10$8cgGxrIeNaaKYp9xm9nwDuAU5BzNou4/JaLJpoj1VUZfAB9t5pw5S",
     "role": "Admin"
   }
-  \n
+ 
 
-User Login \n
+-User Login :
    Give username and password for login, if creadentials true. then return a jwt token \n
    token contains user details too. \n
    \n
@@ -78,18 +76,18 @@ User Login \n
    }   
    \n
    \n
-   output format (get token in response body) \n
+   output format (get token in response body) 
    eg. {
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
        }
-  \n
-Get request  \n
-   endpoint: localhost:8080/tasks/ (get request) \n
-   \n
+  
+Get request 
+   endpoint: localhost:8080/tasks/ (get request) 
    
-   hit from postman (write token with 'token' as key and values as token which got from response at login time) \n
-   \n
-   if admin request for get api, show all tasks \n
+   
+   hit from postman (write token with 'token' as key and values as token which got from response at login time)
+  
+   if admin request for get api, show all tasks
    output format
    [
     {
@@ -109,10 +107,10 @@ Get request  \n
         "__v": 0
     }
   ]
-  \n
-  if manager request the get api, only return array of their department tasks. \n
-  if employee request the get api ,only return array of their assigned tasks. \n
-  \n
-Delete User \n
-   enpoint : localhost:8080/users/  (http patch) \n
-   only admin can delete the user. \n
+  
+  if manager request the get api, only return array of their department tasks.
+  if employee request the get api ,only return array of their assigned tasks.
+  
+Delete User 
+   enpoint : localhost:8080/users/  (http patch)
+   only admin can delete the user. 
